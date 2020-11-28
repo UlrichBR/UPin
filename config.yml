@@ -1,0 +1,139 @@
+Config:
+  tag: '&6&lU&7&lPin &8>>'
+  enabled: true
+  time-reopen-onclose: 10
+  time-close-solved: 10
+  close-attempts-kick: 10 # use 0 or -1 to disable
+  time-to-kick: 10 # seconds, use 0 or -1 to disable
+  permission_bypass: 'UPin.Bypass'
+  use_LEGACY_MODE: true
+
+Session:
+  enabled: true
+  time: 1 #in minutes
+
+Authme:
+  open: false
+  delay: 3
+
+Join:
+  open: true
+  delay: 3
+  delay-reopen: 5
+
+Cosmetic:
+  item:
+    material: STAINED_GLASS_PANE
+    data: 7
+    amount: 1
+    name: ' '
+    lore: {}
+    enchants: {}
+    flags:
+    - 'HIDE_ENCHANTS'
+
+Pin:
+  enabled: true
+  inventory-rows: 4
+  inventory-name: '&8Click on the item &4%item%'
+  error-action:
+  - 'KICK %player% &cYou need to click on the correct item!'
+  - 'broadcast &cPlayer &a%player% &cwas kicked because he missed the pin!'
+  Items:
+  - 'player'
+  - 'apple'
+  - 'cake'
+  - 'sword'
+  List:
+    player:
+      clickable: true
+      itemstack: 'SKULL_ITEM' #Use PLAYER_HEAD on 1.13+ version
+      texture: '%player%'
+      data: 3
+      amount: 1
+      slot: 10
+      name: '&a&l%player%'
+      lore:
+      - ''
+      - ' &eIs the menu asking you to click here?'
+      enchants: {}
+      flags:
+      - 'HIDE_ENCHANTS'
+    apple:
+      clickable: true
+      itemstack: 'APPLE'
+      data: 0
+      amount: 1
+      slot: 12
+      name: '&a&lAPPLE'
+      lore:
+      - ''
+      - ' &eIs the menu asking you to click here?'
+      enchants: {}
+      flags:
+      - 'HIDE_ENCHANTS'
+    cake:
+      clickable: true
+      itemstack: 'CAKE'
+      data: 0
+      amount: 1
+      slot: 14
+      name: '&a&lCAKE'
+      lore:
+      - ''
+      - ' &eIs the menu asking you to click here?'
+      enchants: {}
+      flags:
+      - 'HIDE_ENCHANTS'
+    sword:
+      clickable: true
+      itemstack: 'DIAMOND_SWORD'
+      data: 0
+      amount: 1
+      slot: 16
+      name: '&a&lSWORD'
+      lore:
+      - ''
+      - ' &eIs the menu asking you to click here?'
+      enchants:
+      - 'PROTECTION_ENVIRONMENTAL;2'
+      flags:
+      - 'HIDE_ENCHANTS'
+      - 'HIDE_ATTRIBUTES'
+    help:
+      clickable: false
+      itemstack: 'PAPER'
+      data: 0
+      amount: 1
+      slot: 31
+      name: '&aAbout Pin?'
+      lore:
+      - ''
+      - ' &eThis helps ensure that you '
+      - '&eare a real player, avoiding'
+      - '&ebot attacks.'
+      enchants:
+      - 'PROTECTION_ENVIRONMENTAL;2'
+      flags:
+      - 'HIDE_ENCHANTS'
+
+Messages:
+  Comum:
+    no_permission: '%tag% &cYou do not have permission.'
+    reloaded_config: '%tag% &eRecharged settings.'
+    command_by_player: '%tag% &cThis command must be executed by a Player.'
+    command_by_bungee: '%tag% &cThis command must be executed by Console.'
+    error_dispatch: '%tag% &cError to dispatch this command.'
+    player_not_found: '%tag% &cPlayer not found'
+    pin_passed: '%tag% &eYou passed pin authentication.'
+    pin_error: '%tag% &cYou missed the pin authentication!'
+    error_usage: '%tag% &cError, use &b/%command% %use%'
+    pin_sended: '%tag% &eYou have sent the pin to &a%player%'
+    bypassed: '%tag% &eYou dont need to authenticate as a Human!!'
+  Help:
+    staff:
+    - ''
+    - '&d&lUPin Commands:'
+    - ' &b/upin help &7- &eDisplays the help menu.'
+    - ' &b/upin reload &7- &eReload the plugin configurations.'
+    - ' &b/upin open <player> &7- &eSend pin auth to player.'
